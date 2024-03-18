@@ -1,8 +1,15 @@
+// eslint-disable-next-line no-unused-vars
+import React from "react";
+import { Stack } from "@fluentui/react";
 import { CommandBarButton } from "@fluentui/react/lib/Button";
-import Filter from "./Filter.jsx";
 
 const menuProps = {
   items: [
+    {
+      key: "allTasks",
+      text: "ALL",
+      iconProps: { iconName: "AllApps" },
+    },
     {
       key: "urgentTasks",
       text: "Urgent",
@@ -25,21 +32,22 @@ const menuProps = {
     },
   ],
 };
-const addIcon = { iconName: "Add" };
+const addIcon = { iconName: "Filter" };
+const stackStyles = { root: { height: 44 } };
 
-function TaskControl() {
+function Filter() {
   return (
-    <div className="flex justify-between">
+    <Stack horizontal styles={stackStyles} className="flex justify-center">
       <CommandBarButton
         className="text-color-primary bg-color-secondary"
         iconProps={addIcon}
-        text="New task"
+        text="Filter"
         menuProps={menuProps}
+        // disabled={disabled}
+        // checked={checked}
       />
-
-      <Filter />
-    </div>
+    </Stack>
   );
 }
 
-export default TaskControl;
+export default Filter;
