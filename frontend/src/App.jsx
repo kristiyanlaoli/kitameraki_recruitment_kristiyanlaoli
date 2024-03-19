@@ -1,42 +1,49 @@
 import "./App.css";
+import { useState } from "react";
 import Header from "./components/Header.jsx";
 import TaskControl from "./components/TaskControl.jsx";
 import { initializeIcons } from "@fluentui/react/lib/Icons";
 import TaskList from "./components/TaskList.jsx";
+import Modal from "./components/Modal.jsx";
 initializeIcons();
 
 function App() {
-  const tasks = [
-    {
-      id: 1,
-      category: "urgent",
-      title: "Finish the report",
-      summary: "The deadline is today!",
-    },
-    {
-      id: 2,
-      category: "important",
-      title: "Prepare for the meeting",
-      summary: "The meeting is tomorrow.",
-    },
-    {
-      id: 3,
-      category: "moderate",
-      title: "Buy groceries",
-      summary: "We are running out of milk.",
-    },
-    {
-      id: 4,
-      category: "low",
-      title: "Call mom",
-      summary: "It's been a while since we last talked.",
-    },
-  ];
+  const [isAddingTask, setIsAddingTask] = useState(false);
+  const [tasks, setTasks] = useState([]);
+  const [category, setCategory] = useState("urgent");
+
+  function cancelAddTaskHandler() {
+    setIsAddingTask(false);
+  }
+
+  function addTaskHandler(taskData) {
+    setTasks((prevTasks) => {
+      return [
+        ...prevTasks,
+        {
+          id: Math.random().toString(),
+          ...taskData,
+        },
+      ];
+    });
+    setIsAddingTask(false);
+  }
+
   return (
     <>
+      {isAddingTask && (
+        <Modal
+          onCancel={cancelAddTaskHandler}
+          onAddTask={addTaskHandler}
+          category={category}
+        />
+      )}
       <Header />
       <main>
-        <TaskControl />
+        <TaskControl
+          setCategory={setCategory}
+          setIsAddingTask={setIsAddingTask}
+        />
         <TaskList tasks={tasks} />
       </main>
     </>
