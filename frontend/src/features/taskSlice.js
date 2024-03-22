@@ -8,6 +8,7 @@ const initialState = {
   isLoading: false,
   isAddingTask: false,
   category: "urgent",
+  filteredCategory: "all",
   message: "",
 };
 
@@ -48,12 +49,14 @@ export const taskSlice = createSlice({
   name: "task",
   initialState,
   reducers: {
-    reset: () => initialState,
     setCategory: (state, action) => {
       state.category = action.payload;
     },
     setIsAddingTask: (state, action) => {
       state.isAddingTask = action.payload;
+    },
+    setFilteredCategory: (state, action) => {
+      state.filteredCategory = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -89,5 +92,6 @@ export const taskSlice = createSlice({
   },
 });
 
-export const { reset, setCategory, setIsAddingTask } = taskSlice.actions;
+export const { setCategory, setIsAddingTask, setFilteredCategory } =
+  taskSlice.actions;
 export default taskSlice.reducer;

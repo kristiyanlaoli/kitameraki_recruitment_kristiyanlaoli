@@ -6,21 +6,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTask } from "../../src/features/taskSlice.js";
 
 function TaskList() {
-  const { tasks } = useSelector((state) => state.task);
-  console.log(tasks);
+  //medapatkan data task dari backend
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getTask());
   }, [dispatch]);
 
-  if (!tasks || tasks.length === 0) {
+  const { tasks, filteredCategory } = useSelector((state) => state.task);
+
+  const displayedTasks = tasks.filter((task) => {
+    if (filteredCategory === "all") {
+      return true;
+    }
+    return task.category === filteredCategory;
+  });
+
+  if (!displayedTasks || displayedTasks.length === 0) {
     return <p className="no-tasks">No tasks found!</p>;
   }
 
   return (
     <ul className="task-list">
-      {tasks.map((task) => (
+      {displayedTasks.map((task) => (
         <Task key={task.id} {...task} />
       ))}
     </ul>
