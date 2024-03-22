@@ -2,15 +2,14 @@
 import "./Modal.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTask } from "../../src/features/taskSlice.js";
-import { setIsAddingTask } from "../../src/features/taskSlice.js";
+import { setIsAddingTask, addTask } from "../../src/features/taskSlice.js";
 
 function Modal() {
   const dispatch = useDispatch();
+  const { category } = useSelector((state) => state.task);
   const [formInvalid, setFormInvalid] = useState(false);
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
-  const { category } = useSelector((state) => state.task);
 
   function submitHandler(event) {
     event.preventDefault();

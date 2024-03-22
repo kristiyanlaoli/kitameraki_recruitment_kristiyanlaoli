@@ -1,15 +1,16 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { ActionButton } from "@fluentui/react/lib/Button";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { deleteTask } from "../../src/features/taskSlice.js";
 
 const addFriendIcon = { iconName: "Delete" };
 
 const Delete = ({ id }) => {
-  const handleClick = () => {
-    axios.delete(`http://localhost:4200/api/tasks/${id}`).then((response) => {
-      console.log(response);
-    });
+  const dispatch = useDispatch();
+  const handleClick = (event) => {
+    event.preventDefault();
+    dispatch(deleteTask(id));
   };
 
   return React.createElement(

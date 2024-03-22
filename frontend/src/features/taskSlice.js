@@ -45,6 +45,23 @@ export const addTask = createAsyncThunk(
   }
 );
 
+export const deleteTask = createAsyncThunk(
+  "task/deleteTask",
+  async (id, thunkAPI) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:4200/api/tasks/${id}`
+      );
+      return response.data;
+    } catch (error) {
+      if (error.response) {
+        const message = error.response;
+        return thunkAPI.rejectWithValue(message);
+      }
+    }
+  }
+);
+
 export const taskSlice = createSlice({
   name: "task",
   initialState,
@@ -86,6 +103,21 @@ export const taskSlice = createSlice({
     });
     builder.addCase(addTask.rejected, (state, action) => {
       state.isAddingTask = false;
+      state.isError = true;
+      state.message = action.payload;
+    });
+
+    // Delete task data
+    builder.addCase(deleteTask.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(deleteTask.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.isSuccess = true;
+      state.tasks = state.tasks.filter((task) => task.id !== action.payload.id);
+    });
+    builder.addCase(deleteTask.rejected, (state, action) => {
+      state.isLoading = false;
       state.isError = true;
       state.message = action.payload;
     });
