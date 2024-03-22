@@ -1,11 +1,16 @@
 /* eslint-disable react/prop-types */
 import "./Modal.css";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addTask } from "../../src/features/taskSlice.js";
+import { setIsAddingTask } from "../../src/features/taskSlice.js";
 
-function Modal({ onCancel, onAddTask, category }) {
+function Modal() {
+  const dispatch = useDispatch();
   const [formInvalid, setFormInvalid] = useState(false);
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
+  const { category } = useSelector((state) => state.task);
 
   function submitHandler(event) {
     event.preventDefault();
@@ -18,10 +23,10 @@ function Modal({ onCancel, onAddTask, category }) {
     const taskData = {
       title,
       summary,
-      category,
+      category: category,
     };
 
-    onAddTask(taskData);
+    dispatch(addTask(taskData));
   }
   return (
     <>
@@ -50,7 +55,10 @@ function Modal({ onCancel, onAddTask, category }) {
             </p>
           )}
           <p className="actions">
-            <button type="button" onClick={onCancel}>
+            <button
+              type="button"
+              onClick={() => dispatch(setIsAddingTask(false))}
+            >
               Cancel
             </button>
             <button type="submit">Add Task</button>

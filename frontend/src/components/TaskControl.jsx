@@ -1,8 +1,11 @@
 import { CommandBarButton } from "@fluentui/react/lib/Button";
 import Filter from "./Filter.jsx";
+import { useDispatch } from "react-redux";
+import { setCategory, setIsAddingTask } from "../../src/features/taskSlice.js";
 
 // eslint-disable-next-line react/prop-types
-function TaskControl({ setCategory, setIsAddingTask }) {
+function TaskControl() {
+  const dispatch = useDispatch();
   const menuProps = {
     items: [
       {
@@ -10,8 +13,8 @@ function TaskControl({ setCategory, setIsAddingTask }) {
         text: "Urgent",
         iconProps: { iconName: "Ringer" },
         onClick: () => {
-          setCategory("urgent");
-          setIsAddingTask(true);
+          dispatch(setCategory("urgent"));
+          dispatch(setIsAddingTask(true));
         },
       },
       {
@@ -19,8 +22,8 @@ function TaskControl({ setCategory, setIsAddingTask }) {
         text: "Important",
         iconProps: { iconName: "ActivateOrders" },
         onClick: () => {
-          setCategory("important");
-          setIsAddingTask(true);
+          dispatch(setCategory("important"));
+          dispatch(setIsAddingTask(true));
         },
       },
       {
@@ -28,8 +31,8 @@ function TaskControl({ setCategory, setIsAddingTask }) {
         text: "Moderate",
         iconProps: { iconName: "Heart" },
         onClick: () => {
-          setCategory("moderate");
-          setIsAddingTask(true);
+          dispatch(setCategory("moderate"));
+          dispatch(setIsAddingTask(true));
         },
       },
       {
@@ -37,8 +40,8 @@ function TaskControl({ setCategory, setIsAddingTask }) {
         text: "Low",
         iconProps: { iconName: "Emoji" },
         onClick: () => {
-          setCategory("low");
-          setIsAddingTask(true);
+          dispatch(setCategory("low"));
+          dispatch(setIsAddingTask(true));
         },
       },
     ],
