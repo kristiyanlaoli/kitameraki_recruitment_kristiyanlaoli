@@ -1,26 +1,398 @@
 [
   {
-    "title": "h",
-    "summary": "jj",
+    "title": "Membeli beras",
+    "summary": "Membeli beras di warung seberang",
     "category": "urgent",
+    "id": 1
+  },
+  {
+    "title": "Mengantar dokumen",
+    "summary": "Mengantar dokumen ke kantor pos",
+    "category": "important",
+    "id": 2
+  },
+  {
+    "title": "Menyiapkan presentasi",
+    "summary": "Menyiapkan presentasi untuk rapat besok",
+    "category": "moderate",
+    "id": 3
+  },
+  {
+    "title": "Berkebun",
+    "summary": "Menanam sayuran di kebun belakang",
+    "category": "low",
+    "id": 4
+  },
+  {
+    "title": "Membayar tagihan listrik",
+    "summary": "Membayar tagihan listrik bulan ini",
+    "category": "urgent",
+    "id": 5
+  },
+  {
+    "title": "Menyiapkan ulang tahun",
+    "summary": "Mempersiapkan pesta ulang tahun untuk anak",
+    "category": "important",
+    "id": 6
+  },
+  {
+    "title": "Merawat kesehatan",
+    "summary": "Periksa kesehatan rutin di dokter",
+    "category": "moderate",
+    "id": 7
+  },
+  {
+    "title": "Membaca buku",
+    "summary": "Membaca buku tentang sejarah dunia",
+    "category": "low",
+    "id": 8
+  },
+  {
+    "title": "Mengatur keuangan",
+    "summary": "Merencanakan anggaran keuangan bulanan",
+    "category": "urgent",
+    "id": 9
+  },
+  {
+    "title": "Bersepeda",
+    "summary": "Bersepeda ke taman setiap hari Minggu",
+    "category": "important",
     "id": 10
   },
   {
-    "title": "d",
-    "summary": "d",
-    "category": "urgent",
+    "title": "Menyusun rencana liburan",
+    "summary": "Merencanakan liburan ke pantai bersama keluarga",
+    "category": "moderate",
     "id": 11
   },
   {
-    "title": "hdsd",
-    "summary": "uds",
-    "category": "urgent",
+    "title": "Menyiram tanaman",
+    "summary": "Menyiram tanaman di halaman rumah",
+    "category": "low",
     "id": 12
   },
   {
-    "title": "d,k",
-    "summary": "dd",
+    "title": "Mengurus pajak",
+    "summary": "Mengurus pajak kendaraan bermotor",
     "category": "urgent",
     "id": 13
+  },
+  {
+    "title": "Belajar bahasa baru",
+    "summary": "Mempelajari bahasa Spanyol setiap hari",
+    "category": "important",
+    "id": 14
+  },
+  {
+    "title": "Menghadiri rapat",
+    "summary": "Menghadiri rapat tim di kantor",
+    "category": "moderate",
+    "id": 15
+  },
+  {
+    "title": "Menonton film",
+    "summary": "Menonton film terbaru di bioskop",
+    "category": "low",
+    "id": 16
+  },
+  {
+    "title": "Memperbaiki keran air",
+    "summary": "Memperbaiki keran air yang bocor di kamar mandi",
+    "category": "urgent",
+    "id": 17
+  },
+  {
+    "title": "Berlatih yoga",
+    "summary": "Berlatih yoga untuk relaksasi",
+    "category": "important",
+    "id": 18
+  },
+  {
+    "title": "Menyusun daftar belanja",
+    "summary": "Membuat daftar belanjaan bulanan",
+    "category": "moderate",
+    "id": 19
+  },
+  {
+    "title": "Menyapu halaman",
+    "summary": "Menyapu daun kering di halaman rumah",
+    "category": "low",
+    "id": 20
+  },
+  {
+    "title": "Mengganti lampu",
+    "summary": "Mengganti lampu yang mati di ruang tamu",
+    "category": "urgent",
+    "id": 21
+  },
+  {
+    "title": "Belajar memasak",
+    "summary": "Mempelajari resep masakan baru",
+    "category": "important",
+    "id": 22
+  },
+  {
+    "title": "Mengurus asuransi",
+    "summary": "Mengurus klaim asuransi kesehatan",
+    "category": "moderate",
+    "id": 23
+  },
+  {
+    "title": "Berkegiatan sosial",
+    "summary": "Berpartisipasi dalam kegiatan sosial di komunitas",
+    "category": "low",
+    "id": 24
+  },
+  {
+    "title": "Membayar cicilan",
+    "summary": "Membayar cicilan pinjaman rumah",
+    "category": "urgent",
+    "id": 25
+  },
+  {
+    "title": "Belajar memainkan instrumen musik",
+    "summary": "Mempelajari cara memainkan gitar akustik",
+    "category": "important",
+    "id": 26
+  },
+  {
+    "title": "Menyusun jadwal",
+    "summary": "Menyusun jadwal kegiatan minggu depan",
+    "category": "moderate",
+    "id": 27
+  },
+  {
+    "title": "Membersihkan kulkas",
+    "summary": "Membersihkan kulkas dari makanan yang sudah kadaluarsa",
+    "category": "low",
+    "id": 28
+  },
+  {
+    "title": "Mengganti ban mobil",
+    "summary": "Mengganti ban mobil yang sudah aus",
+    "category": "urgent",
+    "id": 29
+  },
+  {
+    "title": "Mempelajari sejarah lokal",
+    "summary": "Mempelajari sejarah tempat tinggal",
+    "category": "important",
+    "id": 30
+  },
+  {
+    "title": "Menghadiri pameran seni",
+    "summary": "Menghadiri pameran seni lukis di museum",
+    "category": "moderate",
+    "id": 31
+  },
+  {
+    "title": "Menyusun rencana investasi",
+    "summary": "Merencanakan investasi jangka panjang",
+    "category": "low",
+    "id": 32
+  },
+  {
+    "title": "Mengurus SIM",
+    "summary": "Mengurus perpanjangan SIM yang sudah habis masa berlakunya",
+    "category": "urgent",
+    "id": 33
+  },
+  {
+    "title": "Belajar menulis",
+    "summary": "Mempelajari teknik menulis artikel",
+    "category": "important",
+    "id": 34
+  },
+  {
+    "title": "Menghadiri seminar",
+    "summary": "Menghadiri seminar tentang teknologi terbaru",
+    "category": "moderate",
+    "id": 35
+  },
+  {
+    "title": "Menyusun rencana bisnis",
+    "summary": "Merencanakan bisnis online",
+    "category": "low",
+    "id": 36
+  },
+  {
+    "title": "Menyusun playlist musik",
+    "summary": "Menyusun playlist musik untuk perjalanan",
+    "category": "low",
+    "id": 32
+  },
+  {
+    "title": "Mengurus izin",
+    "summary": "Mengurus izin perjalanan ke luar kota",
+    "category": "urgent",
+    "id": 33
+  },
+  {
+    "title": "Belajar fotografi",
+    "summary": "Mempelajari teknik fotografi dasar",
+    "category": "important",
+    "id": 34
+  },
+  {
+    "title": "Mengatur ruangan",
+    "summary": "Mengatur ulang tata letak ruangan di rumah",
+    "category": "moderate",
+    "id": 35
+  },
+  {
+    "title": "Berjalan-jalan di taman",
+    "summary": "Berjalan-jalan santai di taman kota",
+    "category": "low",
+    "id": 36
+  },
+  {
+    "title": "Mengganti oli mobil",
+    "summary": "Mengganti oli mesin mobil",
+    "category": "urgent",
+    "id": 37
+  },
+  {
+    "title": "Menyusun rencana makan sehat",
+    "summary": "Membuat rencana menu makanan sehat untuk seminggu",
+    "category": "important",
+    "id": 38
+  },
+  {
+    "title": "Mengatur rapat keluarga",
+    "summary": "Mengatur rapat keluarga bulanan",
+    "category": "moderate",
+    "id": 39
+  },
+  {
+    "title": "Membersihkan jendela",
+    "summary": "Membersihkan jendela rumah dari debu",
+    "category": "low",
+    "id": 40
+  },
+  {
+    "title": "Mengurus visa",
+    "summary": "Mengurus visa perjalanan ke luar negeri",
+    "category": "urgent",
+    "id": 41
+  },
+  {
+    "title": "Belajar mengemudi",
+    "summary": "Mempelajari teknik mengemudi mobil",
+    "category": "important",
+    "id": 42
+  },
+  {
+    "title": "Merencanakan perjalanan bisnis",
+    "summary": "Merencanakan perjalanan bisnis ke luar kota",
+    "category": "moderate",
+    "id": 43
+  },
+  {
+    "title": "Mengatur kebun",
+    "summary": "Mengatur ulang taman di halaman rumah",
+    "category": "low",
+    "id": 44
+  },
+  {
+    "title": "Mengganti baterai remote",
+    "summary": "Mengganti baterai remote TV yang habis",
+    "category": "urgent",
+    "id": 45
+  },
+  {
+    "title": "Belajar memperbaiki sepeda",
+    "summary": "Mempelajari cara memperbaiki sepeda sendiri",
+    "category": "important",
+    "id": 46
+  },
+  {
+    "title": "Menghadiri acara komunitas",
+    "summary": "Menghadiri acara diskusi di komunitas sekitar",
+    "category": "moderate",
+    "id": 47
+  },
+  {
+    "title": "Membuat scrapbook",
+    "summary": "Membuat scrapbook kenangan keluarga",
+    "category": "low",
+    "id": 48
+  },
+  {
+    "title": "Mengganti kabel listrik",
+    "summary": "Mengganti kabel listrik yang rusak di rumah",
+    "category": "urgent",
+    "id": 49
+  },
+  {
+    "title": "Belajar menulis",
+    "summary": "Mempelajari teknik menulis cerita pendek",
+    "category": "important",
+    "id": 50
+  },
+  {
+    "title": "Mengikuti kelas seni lukis",
+    "summary": "Mengikuti kelas seni lukis di studio seni",
+    "category": "moderate",
+    "id": 51
+  },
+  {
+    "title": "Menyusun rencana perjalanan",
+    "summary": "Mengatur rencana perjalanan akhir pekan",
+    "category": "low",
+    "id": 52
+  },
+  {
+    "title": "Mengganti lampu kamar",
+    "summary": "Mengganti lampu kamar yang sudah mati",
+    "category": "urgent",
+    "id": 53
+  },
+  {
+    "title": "Membaca buku anak",
+    "summary": "Membaca buku cerita untuk anak sebelum tidur",
+    "category": "important",
+    "id": 54
+  },
+  {
+    "title": "Menghadiri kursus bahasa",
+    "summary": "Menghadiri kursus bahasa Inggris di kota",
+    "category": "moderate",
+    "id": 55
+  },
+  {
+    "title": "Menyusun daftar tugas",
+    "summary": "Menyusun daftar tugas sekolah minggu depan",
+    "category": "low",
+    "id": 56
+  },
+  {
+    "title": "Mengganti kunci pintu",
+    "summary": "Mengganti kunci pintu yang rusak di rumah",
+    "category": "urgent",
+    "id": 57
+  },
+  {
+    "title": "Belajar berkebun",
+    "summary": "Mempelajari teknik berkebun di balkon rumah",
+    "category": "important",
+    "id": 58
+  },
+  {
+    "title": "Menghadiri pertemuan alumni",
+    "summary": "Menghadiri pertemuan alumni sekolah",
+    "category": "moderate",
+    "id": 59
+  },
+  {
+    "title": "Bermain dengan hewan peliharaan",
+    "summary": "Bermain dengan kucing di taman belakang",
+    "category": "low",
+    "id": 60
+  },
+  {
+    "title": "Membeli Perangko",
+    "summary": "Membeli perangko di gramedia",
+    "category": "moderate",
+    "id": 61
   }
 ]

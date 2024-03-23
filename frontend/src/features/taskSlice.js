@@ -14,19 +14,22 @@ const initialState = {
   message: "",
 };
 
-export const getTask = createAsyncThunk("task/getTask", async (_, thunkAPI) => {
-  try {
-    const response = await axios.get(
-      "http://localhost:4200/api/tasks?page=1&pageSize=200"
-    );
-    return response.data;
-  } catch (error) {
-    if (error.response) {
-      const message = error.response;
-      return thunkAPI.rejectWithValue(message);
+export const getTask = createAsyncThunk(
+  "task/getTask",
+  async (pages, thunkAPI) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:4200/api/tasks?page=${pages.page}&pageSize=${pages.pageSize}`
+      );
+      return response.data;
+    } catch (error) {
+      if (error.response) {
+        const message = error.response;
+        return thunkAPI.rejectWithValue(message);
+      }
     }
   }
-});
+);
 
 export const addTask = createAsyncThunk(
   "task/addTask",
@@ -114,7 +117,7 @@ export const taskSlice = createSlice({
     builder.addCase(getTask.fulfilled, (state, action) => {
       state.isLoading = false;
       state.isSuccess = true;
-      state.tasks = action.payload;
+      state.tasks = [...state.tasks, ...action.payload];
     });
     builder.addCase(getTask.rejected, (state, action) => {
       state.isLoading = false;
