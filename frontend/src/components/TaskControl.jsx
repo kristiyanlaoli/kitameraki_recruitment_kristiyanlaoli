@@ -11,7 +11,7 @@ function TaskControl() {
       {
         key: "urgentTasks",
         text: "Urgent",
-        iconProps: { iconName: "Ringer" },
+        iconProps: { iconName: "Ringer", style: { color: "#9755f5" } },
         onClick: () => {
           dispatch(setCategory("urgent"));
           dispatch(setIsAddingTask(true));
@@ -20,7 +20,7 @@ function TaskControl() {
       {
         key: "importantTasks",
         text: "Important",
-        iconProps: { iconName: "ActivateOrders" },
+        iconProps: { iconName: "ActivateOrders", style: { color: "#9755f5" } },
         onClick: () => {
           dispatch(setCategory("important"));
           dispatch(setIsAddingTask(true));
@@ -29,7 +29,7 @@ function TaskControl() {
       {
         key: "moderateTasks",
         text: "Moderate",
-        iconProps: { iconName: "Heart" },
+        iconProps: { iconName: "Heart", style: { color: "#9755f5" } },
         onClick: () => {
           dispatch(setCategory("moderate"));
           dispatch(setIsAddingTask(true));
@@ -38,7 +38,7 @@ function TaskControl() {
       {
         key: "lowTasks",
         text: "Low",
-        iconProps: { iconName: "Emoji" },
+        iconProps: { iconName: "Emoji", style: { color: "#9755f5" } },
         onClick: () => {
           dispatch(setCategory("low"));
           dispatch(setIsAddingTask(true));
@@ -46,14 +46,19 @@ function TaskControl() {
       },
     ],
   };
-  const addIcon = { iconName: "Add" };
+
   return (
     <div className="flex justify-between">
       <CommandBarButton
-        className="text-color-primary bg-color-secondary"
-        iconProps={addIcon}
+        className="hover:text-color-blue bg-color-secondary"
+        iconProps={{ iconName: "Add" }}
         text="New task"
         menuProps={menuProps}
+        styles={{
+          icon: {
+            color: "black", // ganti dengan warna yang Anda inginkan
+          },
+        }}
       />
 
       <Filter />

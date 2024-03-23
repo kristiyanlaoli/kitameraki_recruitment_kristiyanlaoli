@@ -7,6 +7,8 @@ const initialState = {
   isSuccess: false,
   isLoading: false,
   isAddingTask: false,
+  isEditingTask: false,
+  editTaskId: null,
   category: "urgent",
   filteredCategory: "all",
   message: "",
@@ -62,6 +64,28 @@ export const deleteTask = createAsyncThunk(
   }
 );
 
+export const editTask = createAsyncThunk(
+  "task/editTask",
+  async (task, thunkAPI) => {
+    try {
+      const response = await axios.put(
+        `http://localhost:4200/api/tasks/${task.id}`,
+        {
+          title: task.title,
+          summary: task.summary,
+          category: task.category,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      if (error.response) {
+        const message = error.response;
+        return thunkAPI.rejectWithValue(message);
+      }
+    }
+  }
+);
+
 export const taskSlice = createSlice({
   name: "task",
   initialState,
@@ -74,6 +98,12 @@ export const taskSlice = createSlice({
     },
     setFilteredCategory: (state, action) => {
       state.filteredCategory = action.payload;
+    },
+    setIsEditingTask: (state, action) => {
+      state.isEditingTask = action.payload;
+    },
+    setEditTaskId: (state, action) => {
+      state.editTaskId = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -121,9 +151,31 @@ export const taskSlice = createSlice({
       state.isError = true;
       state.message = action.payload;
     });
+
+    // Edit task data
+    builder.addCase(editTask.pending, (state) => {
+      state.isEditingTask = true;
+    });
+    builder.addCase(editTask.fulfilled, (state, action) => {
+      state.isEditingTask = false;
+      state.isSuccess = true;
+      state.tasks = state.tasks.map((task) =>
+        task.id === action.payload.id ? action.payload : task
+      );
+    });
+    builder.addCase(editTask.rejected, (state, action) => {
+      state.isEditingTask = false;
+      state.isError = true;
+      state.message = action.payload;
+    });
   },
 });
 
-export const { setCategory, setIsAddingTask, setFilteredCategory } =
-  taskSlice.actions;
+export const {
+  setCategory,
+  setIsAddingTask,
+  setFilteredCategory,
+  setIsEditingTask,
+  setEditTaskId,
+} = taskSlice.actions;
 export default taskSlice.reducer;

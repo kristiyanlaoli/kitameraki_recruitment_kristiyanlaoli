@@ -21,8 +21,8 @@ function Task({ id, category, title, summary }) {
           <p>{summary}</p>
         </div>
       </div>
-      <div>
-        <Edit />
+      <div className="flex flex-col">
+        <Edit id={id} />
         <Delete id={id} />
       </div>
     </li>

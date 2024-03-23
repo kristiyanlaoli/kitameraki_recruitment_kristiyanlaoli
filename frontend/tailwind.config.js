@@ -10,7 +10,8 @@ export default {
     colors: {
       color: {
         primary: "#9755f5",
-        secondary: "#c9aaff",
+        secondary: "#9755f5",
+        blue: "#0369a1",
       },
     },
   },

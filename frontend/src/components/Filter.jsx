@@ -15,7 +15,7 @@ function Filter() {
       {
         key: "allTasks",
         text: "All",
-        iconProps: { iconName: "AllApps" },
+        iconProps: { iconName: "AllApps", style: { color: "#9755f5" } },
         onClick: () => {
           dispatch(setFilteredCategory("all"));
         },
@@ -23,7 +23,7 @@ function Filter() {
       {
         key: "urgentTasks",
         text: "Urgent",
-        iconProps: { iconName: "Ringer" },
+        iconProps: { iconName: "Ringer", style: { color: "#9755f5" } },
         onClick: () => {
           dispatch(setFilteredCategory("urgent"));
         },
@@ -31,7 +31,7 @@ function Filter() {
       {
         key: "importantTasks",
         text: "Important",
-        iconProps: { iconName: "ActivateOrders" },
+        iconProps: { iconName: "ActivateOrders", style: { color: "#9755f5" } },
         onClick: () => {
           dispatch(setFilteredCategory("important"));
         },
@@ -39,7 +39,7 @@ function Filter() {
       {
         key: "moderateTasks",
         text: "Moderate",
-        iconProps: { iconName: "Heart" },
+        iconProps: { iconName: "Heart", style: { color: "#9755f5" } },
         onClick: () => {
           dispatch(setFilteredCategory("moderate"));
         },
@@ -47,7 +47,7 @@ function Filter() {
       {
         key: "lowTasks",
         text: "Low",
-        iconProps: { iconName: "Emoji" },
+        iconProps: { iconName: "Emoji", style: { color: "#9755f5" } },
         onClick: () => {
           dispatch(setFilteredCategory("low"));
         },
@@ -57,10 +57,15 @@ function Filter() {
   return (
     <Stack horizontal styles={stackStyles} className="flex justify-center">
       <CommandBarButton
-        className="text-color-primary bg-color-secondary"
+        className="hover:text-color-blue bg-color-secondary"
         iconProps={addIcon}
         text="Filter"
         menuProps={menuProps}
+        styles={{
+          icon: {
+            color: "black", // ganti dengan warna yang Anda inginkan
+          },
+        }}
       />
     </Stack>
   );
